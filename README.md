@@ -73,7 +73,7 @@ This installs all required Python packages listed in `requirements.txt`:  pip in
 This starts the Streamlit server and opens the dashboard in your browser: streamlit run main_streamlit_app.py
 
 
-> 💡 If you're using a virtual environment (e.g. `venv`), make sure it's activated before running these commands.
+>  If you're using a virtual environment (e.g. `venv`), make sure it's activated before running these commands.
 
 ##  Author
 
