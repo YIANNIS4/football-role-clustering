@@ -8,7 +8,8 @@ An interactive Streamlit application developed as part of a master's thesis in S
 
 ##  Live App
 
-Access the deployed dashboard here: [Streamlit App](https://your-username.streamlit.app)
+Access the deployed dashboard here: [Streamlit App](https://football-role-clustering-ypguqyzfku3zq7vkatqgef.streamlit.app)
+
 
 ## Repository Contents
 
