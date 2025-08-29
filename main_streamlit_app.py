@@ -403,8 +403,7 @@ def render_midfielders_dashboard(df):
     # Explanations for tactical roles and PCA components
     tactical_roles_desc = {
         'Deep-lying Playmaker': 'A midfielder who operates from a deep position, controlling the tempo of the game and initiating attacks with precise passing.',
-        'Box-to-box Midfielder': 'An energetic and versatile player who covers the entire pitch, contributing to both defense and attack.',
-        'Creative Catalyst': 'A dynamic, attack-minded midfielder who excels at creating goal-scoring opportunities and operating in the final third.',
+        'Final-Thrird Playmaker': 'A creative midfielder who operates primarily in advanced zones, just outside or inside the opponent’s penalty area. Their primary function is to unlock defensive blocks through incisive passing, intelligent positioning, and spatial awareness.' ,
         'Positional Anchor': 'A defensive-minded midfielder who stays in a central position to protect the backline and break up opposition attacks.'
     }
 
@@ -784,3 +783,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
