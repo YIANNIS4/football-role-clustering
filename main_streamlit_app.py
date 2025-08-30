@@ -312,7 +312,7 @@ def render_defenders_dashboard(df):
             group_name = next((group for group, pcas in composite_groups.items() if pca in pcas), "N/A")
             st.markdown(f"- **{pca}** (Group: *{group_name}*): {desc}")
             
-    st.write("✅ La Liga defenders in filtered_df:", filtered_df[filtered_df["league"] == "La Liga"].shape[0])
+    
 
 
     st.subheader("📋 Player Table")
@@ -796,6 +796,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
