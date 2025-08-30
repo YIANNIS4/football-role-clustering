@@ -103,6 +103,9 @@ def render_defenders_dashboard(df):
     """
     if 'minutes' in df.columns:
         df = df.rename(columns={'minutes': 'Minutes Played'})
+        df['League'] = df['League'].str.strip().str.title()
+        df['Tactical Role'] = df['Tactical Role'].astype(str).str.strip()
+
 
     # Explanations for tactical roles and PCA components
     tactical_roles_desc = {
@@ -254,7 +257,14 @@ def render_defenders_dashboard(df):
     # Filters
     st.sidebar.markdown("---")
     st.sidebar.subheader("Defenders Dashboard Filters")
-    selected_roles = st.sidebar.multiselect("Select Role(s)", sorted(roles), default=list(roles), key="defenders_role_select")
+    role_options = ["All"] + sorted(roles)
+    selected_roles = st.sidebar.multiselect("Select Role(s)", role_options, default=["All"], key="defenders_role_select")
+
+    if "All" in selected_roles:
+        filtered_df = df.copy()
+    else:
+        filtered_df = df[df['Tactical Role'].isin(selected_roles)]
+
     selected_players = st.sidebar.multiselect("Compare Players (Radar + Bar)", sorted(players), default=[], key="defenders_player_compare")
     single_player_filter = st.sidebar.selectbox("Filter Table by Player", ["All"] + sorted(players), key="defenders_single_player_filter")
 
@@ -301,6 +311,9 @@ def render_defenders_dashboard(df):
         for pca, desc in pca_explanations.items():
             group_name = next((group for group, pcas in composite_groups.items() if pca in pcas), "N/A")
             st.markdown(f"- **{pca}** (Group: *{group_name}*): {desc}")
+            
+    st.write("✅ La Liga defenders in filtered_df:", filtered_df[filtered_df["league"] == "La Liga"].shape[0])
+
 
     st.subheader("📋 Player Table")
 
@@ -783,5 +796,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
