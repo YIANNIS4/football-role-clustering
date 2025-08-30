@@ -771,6 +771,7 @@ def main():
 
     if dashboard_choice == "Defenders":
         df = load_data("defenders_processed_dataset_for_app_ready.csv")
+        
         if not df.empty:
             render_defenders_dashboard(df)
     elif dashboard_choice == "Midfielders":
