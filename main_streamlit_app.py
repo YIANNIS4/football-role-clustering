@@ -178,14 +178,14 @@ def render_defenders_dashboard(df):
     df = df.rename(columns=pca_metrics_map)
     pca_metrics = list(pca_metrics_map.values())
     raw_unscaled_metrics = [
-        'Goals per 90', 'Shots', 'Assists per 90', 'Dribble Success %',
+        'Goals per 90', 'Assists per 90',
         'Total Pass Accuracy %', 'Tackles Success %', 'Dribblers Tackled',
         'Blocks per 90', 'Shots Blocked per 90', 'Passes Blocked per 90',
         'Clearances per 90', 'Errors per 90'
     ]
      
      # Convert percentage metrics from decimals to proper percentages
-    percentage_metrics = ['Dribble Success %', 'Total Pass Accuracy %', 'Tackles Success %']
+    percentage_metrics = ['Total Pass Accuracy %', 'Tackles Success %']
     for metric in percentage_metrics:
         if metric in df.columns and pd.api.types.is_numeric_dtype(df[metric]):
             df[metric] = df[metric] * 100
@@ -783,4 +783,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
