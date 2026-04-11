@@ -77,7 +77,7 @@ This starts the Streamlit server and opens the dashboard in your browser: stream
 
 ##  Author
 
-**Ioannis Kastritis** — MSc candidate in Football Data Analytics  
+**Yiannis Kastritis** — MSc candidate in Football Data Analytics  
 Focused on bridging technical rigor with tactical football insight.
 
 ##  Acknowledgments
